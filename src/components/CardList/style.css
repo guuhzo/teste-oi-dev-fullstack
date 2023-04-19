@@ -1,0 +1,10 @@
+#clist-container {
+  flex: 1;
+  max-width: 1000px;
+  max-height: 500px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
