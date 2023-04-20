@@ -1,70 +1,59 @@
-# Getting Started with Create React App
+![banner](assets/repo/banner.png)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Desafio Dev Fullstack 
 
-## Available Scripts
+Foi solicitado que fosse criado uma página web que consome o serviço PokéAPI e lista os pokémon em forma de grid, podendo ser navegado via paginação.
 
-In the project directory, you can run:
+### Prévia do resultado final
+![page_example](assets/repo/page_example.png)
 
-### `npm start`
+[Link para a pagina](https://gsndev.com.br)
+**Obs: Deploy realizado no Firebase em um domínio próprio.**
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Overview do desafio
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Requisitos funcionais obrigatórios
 
-### `npm test`
+- Deverá ser exibido apenas 10 cartas por página;:white_check_mark:
+- Cada carta deverá conter: Imagem do Pokemon, Nome, Tipo, Status HP, Status Ataque, Status Defesa;:white_check_mark:
+- A paginação deverá estar abaixo das cartas e deverá conter 2 páginas à frente e 2 para trás, caso seja o início, colocar 4 páginas à frente e o final 4 atrás, respectivamente. Adicionar também o botóes: primeira página, última página, página anterior e próxima página;:white_check_mark: **OBS: Para manter um padrão de navegação e usabilidade foi adicionado uma condição extra, caso a página corrente seja a segunda ou a penúltima o número de páginas à direita ou à esquerda será 3.**
+- A estilização deve ser feita em CSS puro ou SASS, podendo ser utilizado CSS Grid ou CSS Flexbox;:white_check_mark:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Requisitos não funcionais obrigatórios
 
-### `npm run build`
+- Deve consumida a API REST aberta https://pokeapi.co/ (HTTP/JSON);:white_check_mark:
+- Deve ser feito em React (pode utilizar Create React App);:white_check_mark:
+- Deve ser gerado um README.md de como subir a aplicação;:white_check_mark:
+- Implementar testes unitários (Não precisa cobrir todo o código);:white_check_mark:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Requisitos desejáveis
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Setup de ambiente de desenvolvimento usando docker / docker- compose; :white_check_mark:
+- Hospedar em um ambiente cloud a sua escolha (Heroku, AWS, IBM Cloud, GCP, etc); :white_check_mark: **OBS: Deploy realizado no firebase**
+- Implementar alguma ferramenta de lint ou qualidade (sonar, code- quality, eslint, etc); :white_check_mark: **OBS: Utilizado ESLINT**
+- Deploy automatizado via pipeline (gitlab-ci, github actions, etc);
+<br><br>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## :hammer_and_wrench: Configuração do ambiente
+### Requisitos mínimos:
+![npm_version](https://img.shields.io/npm/v/react)
 
-### `npm run eject`
+### Rodando o projeto - Método tradicional
+```bash
+# Instalar dependências
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+$ npm i nstall 
+# OU
+$ yarn 
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# Iniciando a aplicação
+$ npm run start
+# OU
+$ yarn start
+```
+### Rodando o projeto - Método utilizando docker
+```bash
+$ npm run start:container
+# OU
+$ yarn start:container
+```
