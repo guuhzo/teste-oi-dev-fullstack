@@ -13,8 +13,9 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "start:container": "docker-compose -f docker-compose-dev.yml up",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "jest",
     "eject": "react-scripts eject",
     "prepare": "husky install",
     "commit": "git-cz",
