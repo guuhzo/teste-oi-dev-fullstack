@@ -7,7 +7,7 @@ Foi solicitado que fosse criado uma página web que consome o serviço PokéAPI 
 ### Prévia do resultado final
 ![page_example](assets/repo/page_example.png)
 
-[Link para a pagina](https://gsndev.com.br)
+[Link para a pagina](https://desafio-oi.gsndev.com.br)
 **Obs: Deploy realizado no Firebase em um domínio próprio.**
 
 ## Overview do desafio
@@ -31,7 +31,7 @@ Foi solicitado que fosse criado uma página web que consome o serviço PokéAPI 
 - Setup de ambiente de desenvolvimento usando docker / docker- compose; :white_check_mark:
 - Hospedar em um ambiente cloud a sua escolha (Heroku, AWS, IBM Cloud, GCP, etc); :white_check_mark: **OBS: Deploy realizado no firebase**
 - Implementar alguma ferramenta de lint ou qualidade (sonar, code- quality, eslint, etc); :white_check_mark: **OBS: Utilizado ESLINT**
-- Deploy automatizado via pipeline (gitlab-ci, github actions, etc);
+- Deploy automatizado via pipeline (gitlab-ci, github actions, etc); :white_check_mark:
 <br><br>
 
 ## :hammer_and_wrench: Configuração do ambiente
