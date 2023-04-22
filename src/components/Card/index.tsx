@@ -6,7 +6,8 @@ import Section from '../Section'
 import Pokemon from '../../shared/types/pokemon'
 
 import notFoundImage from '../../assets/image_not_found.png'
-import CardSkeleton from '../CardSkeleton'
+import CardSkeleton, { ImageSkeleton } from '../CardSkeleton'
+import ContentLoader from 'react-content-loader'
 
 interface CardProps {
   item: Promise<Pokemon>
@@ -18,6 +19,7 @@ const Card: React.FC<CardProps> = ({ item }) => {
 
   const loadPokemonData = useCallback(async () => {
     setIsLoading(true)
+    setImageDidLoad(false)
 
     const loadedPokemon = await item
     setPokemon(loadedPokemon)
@@ -32,7 +34,7 @@ const Card: React.FC<CardProps> = ({ item }) => {
   return (
     <>
       <div id="card-container">
-        {!isLoading && imageDidLoad
+        {!isLoading
           ? (
             <>
 
@@ -41,12 +43,17 @@ const Card: React.FC<CardProps> = ({ item }) => {
                   <img
                     id="card-image-content"
                     src={pokemon.image ?? notFoundImage}
-                    style={{ visibility: imageDidLoad ? 'visible' : 'hidden' }}
+                    style={imageDidLoad ? {} : { width: 0, height: 0 }}
                     alt={!pokemon.image
                       ? 'not_found'
                       : 'pokemon'}
                     onLoad={() => { setImageDidLoad(true) }}
                   />
+                  {!imageDidLoad && (
+                    <ContentLoader style={{ height: 80 }}>
+                      {ImageSkeleton}
+                    </ContentLoader>
+                  )}
                 </>
               </div>
               <div id="card-info">
